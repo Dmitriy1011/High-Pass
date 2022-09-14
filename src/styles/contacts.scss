@@ -1,0 +1,408 @@
+@import '_variables.scss';
+@import '_mixins.scss';
+
+.contacts {
+  &__main-container {
+    display: grid;
+    grid-template-columns: minmax(850px, 1fr) minmax(410px, 1fr);
+    grid-template-rows: auto;
+    grid-template-areas: "map subscr";
+    padding-bottom: 69px;
+    gap: 30px;
+  }
+
+  &__title {
+    margin-bottom: 17px;
+    font-family: "TT Firs Neue Bold", sans-serif;
+    font-weight: $font-weight-700;
+    font-size: $font-size-24;
+    line-height: 31px;
+    color: $blackColor;
+  }
+
+  &__map-container {
+    position: relative;
+    grid-area: map;
+  }
+
+  &__map {
+    max-width: 100%;
+    height: 100%;
+  }
+
+  .ymaps-2-1-79-map .ymaps {
+    height: 100% !important;
+  }
+
+  &__left {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    width: 410px;
+    height: 100%;
+    background-color: rgba(32, 32, 32, 0.85);
+  }
+
+  &__left-info {
+    margin-top: 16px;
+    margin-left: 10px;
+    max-width: 73%;
+  }
+
+
+  &__left-close-btn {
+    position: absolute;
+    top: 18px;
+    right: 15px;
+    border: none;
+    background-color: transparent;
+  }
+
+  &__left-name {
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-family: "TT Firs Neue Reg", sans-serif;
+    font-weight: $font-weight-400;
+    font-size: $font-size-24;
+    line-height: $line-height-22;
+    color: $whiteColor;
+  }
+
+  &__left-descr {
+    margin-bottom: 2px;
+    font-family: "Roboto Reg", sans-serif;
+    font-weight: $font-weight-400;
+    font-size: $font-size-16;
+    line-height: 28px;
+    color: $greyColor;
+  }
+
+  &__left-phone {
+    font-family: "TT Firs Neue Reg", sans-serif;
+    font-weight: $font-weight-400;
+    font-size: $font-size-16;
+    line-height: 21px;
+    color: $whiteColor;
+  }
+
+  &__right {
+    margin-top: -7px;
+    grid-area: subscr;
+  }
+
+  &__right-title {
+    margin-bottom: 5px;
+    font-family: "TT Firs Neue Reg", sans-serif;
+    font-weight: $font-weight-400;
+    font-size: $font-size-24;
+    line-height: $line-height-22;
+    color: $blackColor;
+  }
+
+  &__right-descr {
+    margin-bottom: 14px;
+    font-family: "Roboto Reg", sans-serif;
+    font-weight: $font-weight-400;
+    font-size: $font-size-16;
+    line-height: $line-height-22;
+    color: $darkGreyColor;
+  }
+
+  &__right-form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__right-input {
+    margin-bottom: 20px;
+    padding-top: 15px;
+    padding-left: 23px;
+    padding-bottom: 15px;
+    width: 100%;
+    border: 1px solid transparent;
+    outline: none;
+    font-family: 'Roboto Reg', sans-serif;
+    font-weight: $font-weight-400;
+    font-size: $font-size-16;
+    line-height: $line-height-19;
+    color: $darkGreyColor;
+    background-color: $inputBgColor;
+    cursor: pointer;
+
+    &:hover {
+      &::placeholder {
+        color: $orangeColor;
+      }
+    }
+
+    &:focus {
+      border: 1px solid $orangeColor;
+
+      &::placeholder {
+        color: $blackColor;
+      }
+    }
+  }
+
+  &__right-label {
+    position: relative;
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  &__right-label>.js-validate-error-label {
+    position: absolute;
+    top: 3px;
+    left: 23px;
+    font-weight: $font-weight-400;
+    font-size: 9px;
+    line-height: 11px;
+    color: #FF3030 !important;
+  }
+
+  &__right-textarea {
+    margin-bottom: 20px;
+    padding-top: 15px;
+    padding-left: 23px;
+    border: 1px solid transparent;
+    font-family: 'Roboto Reg', sans-serif;
+    font-weight: $font-weight-400;
+    font-size: $font-size-16;
+    line-height: $line-height-19;
+    background-color: $inputBgColor;
+    resize: none;
+    cursor: pointer;
+
+    &:hover {
+      &::placeholder {
+        color: $orangeColor;
+      }
+    }
+
+    &:focus {
+      border: 1px solid $orangeColor;
+
+      &::placeholder {
+        color: $blackColor;
+      }
+    }
+  }
+
+  &__right-form>input::placeholder,
+  &__right-textarea::placeholder {
+    font-family: 'Roboto Reg', sans-serif;
+    font-weight: $font-weight-400;
+    font-size: $font-size-16;
+    line-height: $line-height-19;
+    color: $darkGreyColor;
+  }
+
+  &__right-button {
+    max-width: 126px;
+    padding: 16px 22px;
+    font-family: "Roboto Bold", sans-serif;
+    font-weight: $font-weight-700;
+    font-size: $font-size-16;
+    border: none;
+    line-height: $line-height-19;
+    color: $whiteColor;
+    background-color: $orangeColor;
+    cursor: pointer;
+  }
+
+  &__left-phone-svg {
+    vertical-align: middle;
+  }
+
+  &__left-phone-text {
+    top: -2px;
+    color: $whiteColor;
+  }
+
+  &__additional-space {
+    padding: 0 100px;
+  }
+}
+
+
+[class*="copyrights-pane"] {
+  display: none;
+}
+
+[class*="ground-pane"] {
+  filter: grayscale(1);
+}
+
+@media(max-width: 1366px) {
+  .contacts {
+    &__main-container {
+      grid-template-columns: minmax(590px, 1fr) minmax(342px, 1fr);
+    }
+
+    &__left {
+      top: auto;
+      bottom: 0;
+      width: 100%;
+      height: 157px;
+      justify-content: flex-start;
+      padding-left: 30px;
+    }
+
+    &__left-phone-text {
+      color: $orangeColor;
+    }
+
+    &__left-phone-svg g path {
+      fill: $orangeColor;
+    }
+
+    &__left-info {
+      margin-top: -5px;
+      margin-left: 0;
+      max-width: 70%;
+    }
+
+    &__left-descr {
+      max-width: 76%;
+    }
+
+    &__additional-space {
+      display: none;
+    }
+
+    &__title {
+      margin-bottom: 19px;
+    }
+  }
+}
+
+@media(max-width: 992px) {
+  .contacts {
+    &__main-container {
+      grid-template-columns: minmax(466px, 1fr) 1fr;
+      grid-template-rows: minmax(460px, auto) minmax(466px, auto);
+      grid-template-areas:
+        "map"
+        "subscr";
+      gap: 24px;
+      padding-bottom: 45px;
+    }
+
+    &__map-container {
+      grid-column: 1/3;
+    }
+
+    &__left-descr {
+      max-width: 92%;
+    }
+
+    &__title {
+      margin-bottom: 17px;
+    }
+
+    &__left-name {
+      margin-top: 17px;
+    }
+
+    &__additional-space {
+      display: table-column;
+    }
+
+    &__right {
+      margin-top: 0;
+    }
+  }
+}
+
+@media(max-width: 576px) {
+  .contacts {
+    .cont-container {
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    &__main-container {
+      grid-template-columns: 1fr;
+      grid-template-rows: 465px 429px;
+      gap: 24px;
+      padding-bottom: 51px;
+    }
+
+    &__title {
+      margin-bottom: 21px;
+      padding-left: 21px;
+      font-size: $font-size-18;
+      line-height: $line-height-23;
+    }
+
+    &__left {
+      display: block;
+      padding-left: 19px;
+      padding-top: 14px;
+      height: 157px;
+    }
+
+    &__left-info {
+      max-width: 100%;
+    }
+
+    &__left-name {
+      margin-bottom: 10px;
+      font-size: $font-size-18;
+    }
+
+    &__left-descr {
+      max-width: 88%;
+      margin-bottom: 11px;
+      font-size: $font-size-14;
+      line-height: $line-height-18;
+    }
+
+    &__right {
+      padding-left: 21px;
+    }
+
+    &__right-title {
+      font-size: $font-size-18;
+    }
+
+    &__right-descr {
+      font-size: $font-size-14;
+      line-height: $line-height-18;
+    }
+
+    &__right-textarea {
+      margin-bottom: 16px;
+    }
+
+    &__right-form>input::placeholder,
+    &__right-textarea::placeholder {
+      font-size: $font-size-14;
+      line-height: $line-height-16;
+    }
+
+    &__right-button {
+      padding: 12px 22px;
+      max-width: 115px;
+      font-size: $font-size-14;
+      line-height: $line-height-16;
+    }
+
+    &__right-input {
+      padding-top: 12px;
+      padding-bottom: 12px;
+    }
+
+    &__left-phone {
+      display: flex;
+      font-family: "TT Firs Neue Reg", sans-serif;
+      font-weight: $font-weight-400;
+      font-size: $font-size-14;
+      line-height: $line-height-18;
+      color: $whiteColor;
+    }
+  }
+}

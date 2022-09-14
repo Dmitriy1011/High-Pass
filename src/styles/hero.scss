@@ -1,0 +1,270 @@
+@import '_variables.scss';
+@import '_mixins.scss';
+
+.hero {
+  position: relative;
+  z-index: 0;
+
+  &-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto auto;
+    grid-template-areas: "block-1 images";
+    gap: 30px;
+    padding-top: 41px;
+    padding-bottom: 36px;
+  }
+
+  &__images {
+    display: grid;
+    grid-template-rows: 308px 257px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    grid-template-areas:
+      "ex-1 ex-1"
+      "ex-2 ex-3"
+    ;
+  }
+
+  &__img {
+    height: 100%;
+  }
+
+  &__masterclass {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    padding-bottom: 60px;
+    padding-left: 60px;
+    background-image: url('../images/neon.webp');
+    @include bgStyles;
+    grid-area: block-1;
+  }
+
+  &__hashtag {
+    position: absolute;
+    top: 17px;
+    right: 16px;
+    padding: 6px 14px;
+    font-family: "Roboto Reg", sans-serif;
+    font-weight: $font-weight-400;
+    font-size: 14px;
+    line-height: 16px;
+    color: $whiteColor;
+    background-color: $hashtagBackround;
+  }
+
+  &__text {
+    margin-bottom: 18px;
+    margin-top: -5px;
+    font-family: 'TT Firs Neue Bold', sans-serif;
+    font-size: $font-size-24;
+    line-height: $line-height-104;
+    color: $blackColor;
+    grid-area: hero-text;
+  }
+
+  &__image-1 {
+    grid-area: ex-1;
+  }
+
+  &__image-2 {
+    grid-area: ex-2;
+  }
+
+  &__image-3 {
+    grid-area: ex-3;
+  }
+
+  &__masterclass-info-master {
+    margin-bottom: 3px;
+    font-family: "Roboto Reg", sans-serif;
+    font-weight: $font-weight-400;
+    font-size: $font-size-16;
+    line-height: 19px;
+    color: $whiteColor;
+  }
+
+  &__masterclass-examples-text {
+    font-family: "TT Firs Neue Bold", sans-serif;
+    font-weight: $font-weight-700;
+    font-size: 24px;
+    line-height: $line-height-104;
+  }
+
+
+  &__masterclass-info-text {
+    margin-bottom: 19px;
+    max-width: 78%;
+    font-family: "TT Firs Neue Bold", sans-serif;
+    font-weight: $font-weight-700;
+    font-size: 36px;
+    line-height: $line-height-104;
+    color: $whiteColor;
+  }
+
+  &__masterclass-btn {
+    padding: 16px 22px;
+    border: none;
+    outline: 3px solid transparent;
+    font-family: "Roboto Bold", sans-serif;
+    font-weight: $font-weight-700;
+    font-size: $font-size-16;
+    line-height: 19px;
+    background-color: $orangeColor;
+    color: $whiteColor;
+    cursor: pointer;
+    transition: background-color, outline .1s ease-in-out;
+
+    &:hover {
+      background-color: $focusBgColor;
+    }
+
+    &:focus {
+      outline: 3px solid $activeBgColor;
+      background-color: $orangeColor;
+    }
+
+    &:active {
+      outline: 3px solid transparent;
+      background-color: $activeBgColor;
+    }
+  }
+}
+
+
+
+@media(max-width: 1366px) {
+  .hero {
+    &-container {
+      gap: 30px;
+      padding-top: 35px;
+    }
+
+    &__images {
+      grid-template-rows: 341px 186px;
+    }
+
+    &__masterclass {
+      padding-left: 30px;
+      padding-bottom: 30px;
+      background-image: url('../images/hero/masterclass-bg-img-1024.webp');
+    }
+
+    &__masterclass-info-text {
+      margin-bottom: 20px;
+      max-width: 95%;
+      font-size: 34px;
+    }
+
+    &__masterclass-info-master {
+      margin-bottom: 8px;
+      font-weight: $font-weight-400;
+      font-size: $font-size-16;
+      line-height: $line-height-19;
+    }
+
+    &__masterclass-btn {
+      line-height: $line-height-19;
+    }
+
+    &__text {
+      margin-top: 0;
+    }
+  }
+}
+
+
+@media(max-width: 992px) {
+  .hero {
+    &-container {
+      gap: 30px;
+      padding-top: 35px;
+      padding-bottom: 38px;
+    }
+
+    &__images {
+      grid-template-rows: 228px 133px;
+    }
+
+    &__masterclass-info-master {
+      margin-bottom: 20px;
+      font-size: $font-size-16;
+      line-height: $line-height-19;
+    }
+
+    &__masterclass {
+      background-image: url('../images/hero/masterclass-bg-img-768.webp');
+    }
+
+    &__text {
+      margin-bottom: 17px;
+      font-size: 22px;
+      line-height: $line-height-23;
+    }
+
+    &__masterclass-info-text {
+      max-width: 77%;
+      line-height: 30px;
+    }
+
+    &__hashtag {
+      top: 18px;
+    }
+  }
+}
+
+
+@media(max-width: 576px) {
+  .hero {
+    &-container {
+      grid-template-columns: 1fr;
+      grid-template-rows: 422px auto;
+      grid-template-areas:
+        "block-1"
+        "hero-images"
+        ;
+      gap: 34px;
+      padding-top: 29px;
+      padding-bottom: 49px;
+    }
+
+    &__images {
+      grid-template-rows: 186px 105px;
+    }
+
+    &__masterclass-info-master {
+      margin-bottom: 9px;
+      font-weight: $font-weight-400;
+      font-size: $font-size-14;
+      line-height: $line-height-16;
+    }
+
+    &__masterclass-info-text {
+      margin-bottom: 10px;
+      max-width: 68%;
+      font-weight: $font-weight-700;
+      font-size: $font-size-24;
+      line-height: 110%;
+    }
+
+    &__masterclass-btn {
+      padding: 12px 22px;
+      font-size: $font-size-14;
+    }
+
+    &__hashtag {
+      top: 6px;
+      right: 2px;
+      font-size: $font-size-12;
+      line-height: $line-height-14;
+    }
+
+    &__text {
+      font-size: $font-size-18;
+      line-height: $line-height-19;
+    }
+  }
+}

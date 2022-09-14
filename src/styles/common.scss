@@ -1,0 +1,122 @@
+html {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  background-color: #E5E5E5;
+}
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+body {
+  position: relative;
+  min-width: 320px;
+  max-width: 1920px;
+  margin: 0 auto;
+  color: black;
+  background-color: #fff;
+  overflow-x: hidden;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1290px;
+  padding: 0;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0, 0, 0, 0);
+  overflow: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+p {
+  padding: 0;
+  margin: 0;
+}
+
+input {
+  border-radius: 0;
+}
+
+input[type="search"] {
+  -webkit-appearance: none;
+}
+
+.js-validate-error-label {
+  font-family: "Roboto Reg";
+}
+
+picture {
+  width: 100%;
+}
+
+/* при работе с float */
+
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+@media(max-width: 1366px) {
+  .container {
+    padding: 0 31px;
+  }
+}
+
+@media(max-width: 992px) {
+  .container {
+    padding: 0 27px;
+  }
+
+  .header-container {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media(max-width: 576px) {
+  .container {
+    padding: 0 21px;
+  }
+
+  .header-container {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}

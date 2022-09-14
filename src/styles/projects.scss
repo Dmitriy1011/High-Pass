@@ -1,0 +1,331 @@
+@import '_variables.scss';
+@import '_mixins.scss';
+
+.projects {
+  &-container {
+    padding: 68px 0;
+  }
+
+  &__cards-wrapper {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-auto-columns: minmax(190px, 630px);
+    gap: 30px;
+    grid-template-areas: "card-1 card-1 card-2 card-2 card-3 card-3 card-4 card-4 card-4 card-4 card-4 card-4"
+      "card-5 card-5 card-5 card-5 card-5 card-5 card-6 card-6 card-6 card-7 card-7 card-7";
+  }
+
+  .card-1 {
+    grid-area: card-1;
+  }
+
+  .card-2 {
+    grid-area: card-2;
+  }
+
+  .card-3 {
+    grid-area: card-3;
+  }
+
+  .card-4 {
+    grid-area: card-4;
+  }
+
+  .card-5 {
+    grid-area: card-5;
+  }
+
+  .card-6 {
+    grid-area: card-6;
+  }
+
+  .card-7 {
+    grid-area: card-7;
+  }
+
+  &__card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex-grow: 1;
+  }
+
+  .card-4 {
+    padding-right: 40px;
+    @include projectsContainerStyles;
+    background-image: url('../images/projects/1920/project-img-4.webp');
+    @include bgStyles;
+  }
+
+  .card-5 {
+    padding-right: 40px;
+    @include projectsContainerStyles;
+    background-image: url('../images/projects/1920/project-img-5.webp');
+    @include bgStyles;
+  }
+
+  &__title {
+    margin-bottom: 12px;
+    font-family: "TT Firs Neue Bold", sans-serif;
+    font-weight: $font-weight-700;
+    font-size: 24px;
+    line-height: 31px;
+    color: $blackColor;
+  }
+
+  &__card-descr {
+    margin-bottom: 10px;
+    font-family: "Roboto Reg", sans-serif;
+    font-weight: $font-weight-400;
+    font-size: $font-size-16;
+    line-height: $line-height-22;
+    color: $blackColor;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &__card-img {
+    margin-bottom: 14px;
+  }
+
+  &__hashtag {
+    position: absolute;
+    top: 7px;
+    right: 7px;
+    padding: 6px 14px;
+    font-family: "Roboto Reg", sans-serif;
+    font-weight: $font-weight-400;
+    font-size: 14px;
+    line-height: 16px;
+    color: $whiteColor;
+    background-color: $hashtagBackround;
+  }
+
+  &__card-date {
+    margin-top: auto;
+    padding-left: 18px;
+    font-family: "Roboto Reg", sans-serif;
+    font-weight: $font-weight-400;
+    font-size: $font-size-12;
+    line-height: $line-height-22;
+    color: $darkGreyColor;
+    background-image: url('../images/mdi_calendar_today.svg');
+    @include bgStyles;
+    background-size: auto;
+    background-position: left 0 top 25%;
+  }
+
+  &__date {
+    display: flex;
+
+    &-svg {
+      margin-right: 4px;
+      margin-top: 2px;
+    }
+
+    &-text {
+      font-family: 'Roboto Reg', sans-serif;
+      font-weight: $font-weight-400;
+      font-size: $font-size-12;
+      line-height: $line-height-22;
+      color: $whiteColor;
+    }
+  }
+
+  &__text-title {
+    margin-bottom: 6px;
+    max-width: 290px;
+    font-family: "TT Firs Neue Bold", sans-serif;
+    font-weight: $font-weight-700;
+    font-size: $font-size-24;
+    line-height: $line-height-24;
+    color: $whiteColor;
+  }
+
+  &__text-descr {
+    max-width: 52%;
+    font-family: "Roboto Reg", sans-serif;
+    font-weight: $font-weight-400;
+    font-size: $font-size-16;
+    line-height: $line-height-22;
+    color: $whiteColor;
+  }
+
+  &__link {
+    display: block;
+    margin-top: auto;
+    padding: 12px 18px;
+    border: 3px solid $orangeColor;
+    font-family: "Roboto Bold", sans-serif;
+    font-weight: $font-weight-700;
+    font-size: $font-size-16;
+    line-height: $line-height-19;
+    color: $whiteColor;
+    transition: background-color .1s ease-in-out;
+
+    &:hover {
+      background-color: $orangeColor;
+    }
+
+    &:focus {
+      background-color: $focusBgColor;
+    }
+
+    &:active {
+      background-color: $activeBgColor;
+    }
+  }
+}
+
+
+
+@media(max-width: 1024px) {
+  .projects {
+    &__cards-wrapper {
+      grid-template-columns: repeat(16, 1fr);
+      grid-auto-columns: minmax(218px, 590px);
+      row-gap: 24px;
+      grid-template-areas:
+        "card-1 card-1 card-1 card-1 card-2 card-2 card-2 card-2 card-3 card-3 card-3 card-3 card-3 card-3 card-3 card-3"
+        "card-4 card-4 card-4 card-4 card-4 card-4 card-4 card-4 card-4 card-4 card-6 card-6 card-6 card-6 card-6 card-6"
+        "card-7 card-7 card-7 card-7 card-7 card-7 card-5 card-5 card-5 card-5 card-5 card-5 card-5 card-5 card-5 card-5"
+      ;
+    }
+
+    .card-4 {
+      padding-right: 29px;
+      padding-left: 29px;
+      padding-top: 30px;
+      padding-bottom: 38px;
+    }
+
+    .card-5 {
+      padding-right: 29px;
+      padding-top: 30px;
+    }
+
+    &__text-title {
+      margin-bottom: 8px;
+    }
+
+    &__text-descr {
+      max-width: 52%;
+    }
+  }
+}
+
+@media(max-width: 768px) {
+  .projects {
+    &-container {
+      padding-bottom: 70px;
+    }
+
+    &__cards-wrapper {
+      grid-template-columns: repeat(6, 1fr);
+      grid-auto-columns: minmax(190px, 714px);
+      row-gap: 28px;
+      grid-template-areas:
+        "card-1 card-1 card-2 card-2 card-3 card-3"
+        "card-4 card-4 card-4 card-4 card-4 card-4"
+        "card-6 card-6 card-6 card-7 card-7 card-7"
+        "card-5 card-5 card-5 card-5 card-5 card-5"
+      ;
+    }
+
+    &__text-descr {
+      max-width: 43%;
+    }
+
+    .card-4 {
+      min-height: 300px;
+      padding-top: 28px;
+      padding-bottom: 32px;
+    }
+
+    .card-5 {
+      min-height: 300px;
+      padding-top: 33px;
+      padding-bottom: 28px;
+    }
+  }
+}
+
+
+@media(max-width: 576px) {
+  .projects {
+    &-container {
+      padding: 51px 0;
+      padding-bottom: 54px;
+    }
+
+    &__cards-wrapper {
+      grid-template-columns: 1fr;
+      grid-auto-columns: auto;
+      row-gap: 25px;
+      grid-template-areas:
+        "card-1"
+        "card-2"
+        "card-3"
+        "card-4"
+        "card-6"
+        "card-7"
+        "card-5"
+      ;
+    }
+
+
+    &__date {
+      margin-bottom: 6px;
+    }
+
+    &__link {
+      margin-top: 0%;
+      padding: 9px 19px;
+      max-width: 112px;
+      font-size: $font-size-14;
+      line-height: $line-height-16;
+    }
+
+    &__card {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+
+    .card-5,
+    .card-6,
+    .card-7 {
+      margin-top: 4px;
+    }
+
+    &__text-descr {
+      max-width: 100%;
+      margin-bottom: 16px;
+      font-size: $font-size-14;
+      line-height: $line-height-18;
+    }
+
+    .card-5-descr {
+      max-width: 55%;
+      margin-bottom: 20px;
+    }
+
+    &__title {
+      margin-bottom: 14px;
+      font-size: $font-size-18;
+      line-height: $line-height-23;
+    }
+
+    &__text-title {
+      margin-bottom: 8px;
+      max-width: 100%;
+    }
+
+    &__hashtag {
+      padding: 2px 14px;
+      font-size: $font-size-12;
+      line-height: 14px;
+    }
+  }
+}

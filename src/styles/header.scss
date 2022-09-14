@@ -1,0 +1,378 @@
+@import '_variables.scss';
+@import '_mixins.scss';
+
+.header {
+  position: relative;
+  background-color: $blackColor;
+
+  &__container {
+    position: relative;
+  }
+
+  &__top {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 0;
+  }
+
+  &__bottom {
+    position: relative;
+    display: none;
+    width: 100%;
+    min-height: 45px;
+    background-color: $headerBottomBackground;
+  }
+
+  &__bottom-nav {
+    width: 100%;
+  }
+
+  &__bottom-list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 27px;
+  }
+
+  &__burger-btn {
+    display: none;
+    border: none;
+    background-color: transparent;
+  }
+
+  &__drop-menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+    flex-direction: column;
+    flex-grow: 1;
+    padding-top: 13px;
+    padding-left: 21px;
+    padding-bottom: 40px;
+    width: 100%;
+    min-height: 541px;
+    border-top: 1px solid $borderColor;
+    background-color: $blackColor;
+    z-index: 5;
+  }
+
+  &__drop-menu.opened {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+
+  &__drop-menu-item:not(:last-child) {
+    margin-bottom: 20px;
+  }
+
+  &__close-btn {
+    border: none;
+    background-color: transparent;
+  }
+
+  &__tel {
+    margin-top: auto;
+    padding-left: 15px;
+    font-family: 'TT Firs Neue Reg', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    color: #FF6E30;
+    background-image: url('../images/mdi_orange-call.svg');
+    background-repeat: no-repeat;
+  }
+
+  &__close-btn {
+    padding: 0;
+  }
+
+  &__search-window {
+    position: absolute;
+    display: none;
+    align-items: center;
+    max-width: 342px;
+    height: 100%;
+    background-color: $blackColor;
+  }
+
+  &__search-input {
+    margin-right: 10px;
+    max-width: 308px;
+    border: none;
+    border-bottom: 1px solid $darkGreyColor;
+    outline: none;
+    color: $whiteColor;
+    background-color: $blackColor;
+
+    &:hover {
+      border-bottom: 1px solid $orangeColor
+    }
+
+    &:focus {
+      border-bottom: 1px solid $orangeColor;
+    }
+
+    &:active {
+      border-bottom: 1px solid $activeBgColor;
+    }
+
+    &:active::placeholder {
+      opacity: 0;
+    }
+  }
+}
+
+
+.logo {
+  position: relative;
+  width: 190px;
+  height: 31px;
+}
+
+.nav {
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 800px;
+    margin-left: 50px;
+    margin-bottom: -10px;
+  }
+
+  &__item {
+    margin-bottom: 10px;
+  }
+
+  &__item:not(:last-child) {
+    margin-right: 79px;
+  }
+
+  &__link {
+    position: relative;
+    outline: none;
+    font-family: "TT Firs Neue Reg", sans-serif;
+    font-weight: $font-weight-400;
+    font-size: $font-size-16;
+    line-height: 21px;
+    color: $whiteColor;
+    transition: color .1s ease-in-out;
+    z-index: 0;
+
+    &:hover {
+      color: $orangeColor;
+    }
+
+    &:focus {
+      color: $whiteColor;
+    }
+
+    &:focus::before {
+      background-color: $orangeColor;
+    }
+
+    &:active {
+      color: $activeBgColor;
+      background-color: transparent;
+    }
+  }
+
+  &__link:before {
+    @include before;
+    transition: background-color .1s ease-in-out;
+  }
+}
+
+
+.socialnets {
+
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 250px;
+
+  &__link {
+    display: block;
+    width: 30px;
+    height: 30px;
+
+    &:hover>&-svg>path {
+      fill: $orangeColor;
+    }
+
+    &:focus>&-svg>path {
+      fill: $focusBgColor;
+    }
+
+    &:active>&-svg>path {
+      fill: $activeBgColor;
+    }
+  }
+
+  &__link>&__link-svg>path {
+    transition: fill .1s ease-in-out;
+  }
+
+  &__item:not(:last-child) {
+    margin-right: 20px;
+  }
+
+}
+
+.search-button {
+  display: none;
+  width: 25px;
+  height: 25px;
+  border: none;
+  background-color: transparent;
+  background-image: url('../images/search.svg');
+  @include bgStyles;
+}
+
+
+.drop-menu-close {
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+
+.header-all-links {
+  @include headerLinksStyles;
+}
+
+.search-window-close {
+  margin-top: 5px;
+}
+
+
+.search-button.show-search-btn {
+  display: inline-block;
+}
+
+.search-button.hide-search-btn {
+  display: none;
+}
+
+
+
+@media(max-width: 1366px) {
+  .header__top {
+    padding: 26px 0;
+  }
+
+  .socialnets {
+    display: none;
+  }
+
+  .search-button {
+    display: inline-block;
+  }
+
+  .logo {
+    width: 166px;
+    height: 27px;
+  }
+
+  .nav__item:not(:last-child) {
+    margin-right: 33px;
+  }
+
+
+  .header__search-window {
+    right: 26px;
+  }
+
+  .header__search-window.show {
+    display: flex;
+  }
+
+  .nav__list {
+    margin-left: 0;
+    margin-right: 50px;
+  }
+
+  .remove-nav {
+    display: none;
+  }
+}
+
+@media(max-width: 992px) {
+  .header__top {
+    padding-left: 29px;
+    padding-right: 29px;
+  }
+
+  .header__bottom {
+    display: flex;
+  }
+
+  .nav {
+    display: none;
+  }
+}
+
+@media(max-width: 576px) {
+  .logo {
+    width: 112px;
+    height: 18px;
+  }
+
+  .search-button {
+    width: 20px;
+    height: 20px;
+  }
+
+  .change-header-top-z-index {
+    z-index: 1;
+  }
+
+  .change-search-window-z-index {
+    z-index: 3;
+  }
+
+  .header {
+    &__bottom-nav {
+      display: none;
+    }
+
+    &__search-window {
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+      max-width: 100%;
+    }
+
+    &__search-input {
+      max-width: 248px;
+    }
+
+    &__top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 25px 21px;
+      min-height: 70px;
+    }
+
+    &__bottom {
+      padding-left: 21px;
+      padding-right: 21px;
+    }
+
+    &__burger-btn {
+      display: inline-block;
+      margin-top: 4px;
+      margin-left: -6px;
+    }
+
+    .nav {
+      display: none;
+    }
+  }
+}

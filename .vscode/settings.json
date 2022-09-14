@@ -1,0 +1,8 @@
+{
+  "path-autocomplete.pathMappings": {
+    "@img": "${folder}/src/images",
+    "@scss": "${folder}/src/styles",
+    "@js": "${folder}/src/scripts"
+  },
+  "compile-hero.disable-compile-files-on-did-save-code": true
+}
